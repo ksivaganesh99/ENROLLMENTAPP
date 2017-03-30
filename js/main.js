@@ -7,12 +7,14 @@ AWS.config.credentials = new AWS.CognitoIdentityCredentials({
 });		
 		
 var lexruntime = new AWS.LexRuntime({apiVersion: '2016-11-28'});
-alert(lexruntime);
+var userid = guid();
+//alert(lexruntime);
+console.log();
 var params = {
   botAlias: 'DEV', /* required */
   botName: 'PasswordReset', /* required */
   inputText: 'Reset the password', /* required */
-  userId: '1123456789', /* required */
+  userId: userid, /* required */
   sessionAttributes: {
     Name: 'Siva',
     /* anotherKey: ... */
@@ -63,10 +65,21 @@ $("#addClass").click(function () {
           
             $("#removeClass").click(function () {
           $('#qnimate').removeClass('popup-box-on');
+		  $(".direct-chat-messages").val("").not("firstChild");
+		  userid = guid();
             });
 			
 
+function guid() {
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+    s4() + '-' + s4() + s4() + s4();
+}
 
+function s4() {
+  return Math.floor((1 + Math.random()) * 0x10000)
+    .toString(16)
+    .substring(1);
+}
 
 
 });
