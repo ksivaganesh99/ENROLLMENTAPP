@@ -28,7 +28,7 @@ $("#sendsubmit").on("click",function(e){
 	var message = $("#user_message").val();
 	params.inputText = message;
 	$("#user_message").val("");
-	$(".direct-chat-messages").append('<div class="direct-chat-info clearfix"><div class="direct-chat-info clearfix"><span class="direct-chat-name pull-left">You</span></div><img alt="message user image" src="images/character.png" class="direct-chat-img"><!-- /.direct-chat-img --><div class="direct-chat-text">'+message +'</div><span class="direct-chat-timestamp pull-right">3.36 PM</span></div>');
+	$(".direct-chat-messages").append('<div class="direct-chat-info clearfix"><div class="direct-chat-info clearfix"><span class="direct-chat-name pull-left">You</span></div><img alt="message user image" src="images/character.png" class="direct-chat-img"><!-- /.direct-chat-img --><div class="direct-chat-text">'+message +'</div></div>');
 	$('.popup-messages').animate({scrollTop:1E10}, 800);
 	//alert(params);
 	lexruntime.postText(params, function (err, data) {
@@ -38,7 +38,7 @@ $("#sendsubmit").on("click",function(e){
   else  {  
 	var message = data.message;
 		console.log(data);
-  $(".direct-chat-messages").append('<div class="direct-chat-info clearfix"><div class="direct-chat-info clearfix"><span class="direct-chat-name pull-left">Eve</span></div><img alt="message user image" src="images/chatbot.png" class="direct-chat-img"><!-- /.direct-chat-img --><div class="direct-chat-text">'+message+'</div> <span class="direct-chat-timestamp pull-right">3.36 PM</span></div>');
+  $(".direct-chat-messages").append('<div class="direct-chat-info clearfix"><div class="direct-chat-info clearfix"><span class="direct-chat-name pull-left">Eve</span></div><img alt="message user image" src="images/chatbot.png" class="direct-chat-img"><!-- /.direct-chat-img --><div class="direct-chat-text">'+message+'</div></div>');
   $('.popup-messages').animate({scrollTop:1E10}, 800);
   
   
